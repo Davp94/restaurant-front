@@ -29,8 +29,10 @@ export class LoginComponent {
     }
     this.authService.login(loginDto).subscribe({
       next: (res: any) => {
-        this.router.navigate(['']);      
+        console.log("🚀 ~ LoginComponent ~ this.authService.login ~ res:", res)
+        this.router.navigate(['']);
       },
+
       // catch: (err: any) => {
       //   console.log("🚀 ~ LoginComponent ~ this.authService.login ~ err:", err)
       // },

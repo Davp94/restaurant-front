@@ -14,7 +14,7 @@ export class AuthService {
   private httpClient = inject(HttpClient);
 
   login(credenciales: LoginDto): Observable<TokenDto> {
-    return this.httpClient.post<TokenDto>(`${this.PATH_URL}/auth/login`, credenciales).pipe(
+    return this.httpClient.post<TokenDto>(`${this.PATH_URL}/user/login`, credenciales).pipe(
       tap((response: TokenDto) => {
         this.token = response.token;
         localStorage.setItem('token', response.token);
