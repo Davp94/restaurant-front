@@ -1,1 +1,24 @@
-<p>menu works!</p>
+<div class="w-full h-full flex p-6">
+  <div class="self flex p-6">
+    <mat-card class="p-6 self-center">
+      <mat-card-header>
+        <mat-card-title>Menu</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="menuForm">
+          <div formArrayName="menus">
+            <section *ngFor="let menu of menusFormArray.controls; let i = index">
+              <section [formGroupName]="i">
+                <mat-checkbox formControlName="checked">
+                  <label>{{menu.get('menuName')?.value}}</label>
+                </mat-checkbox>
+              </section>
+            </section>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="grow"></div>
+  <div></div>
+</div>

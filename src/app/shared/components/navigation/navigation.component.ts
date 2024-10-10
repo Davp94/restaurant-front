@@ -8,7 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 // import { ClienteFormComponent } from '../../feature/cliente/cliente-form/cliente-form.component';
 
 @Component({
@@ -23,7 +23,8 @@ import { RouterLink } from '@angular/router';
     MatListModule,
     MatIconModule,
     AsyncPipe,
-    RouterLink
+    RouterLink,
+    RouterOutlet,
   ]
 })
 export class NavigationComponent {
