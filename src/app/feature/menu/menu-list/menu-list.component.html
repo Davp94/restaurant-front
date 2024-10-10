@@ -1,16 +1,20 @@
-<section>
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-2">
   @for (plato of platoList; track $index) {
-    <mat-card class="example-card" appearance="outlined">
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Small</mat-card-subtitle>
-          <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        {{'longText'}}
-      </mat-card-content>
-    </mat-card>
+  <mat-card class="example-card" appearance="outlined" (click)="openDialog(plato)">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ plato.nombre }}</mat-card-title>
+        <mat-card-subtitle>{{ plato.precio }}</mat-card-subtitle>
+        <img mat-card-sm-image [src]="plato.image">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel voluptate reiciendis distinctio praesentium iusto
+        aperiam laboriosam aspernatur possimus tempore! Eveniet harum consequatur, at impedit blanditiis quod voluptate
+        magni sed saepe?
+      </p>
+    </mat-card-content>
+  </mat-card>
   }
 </section>

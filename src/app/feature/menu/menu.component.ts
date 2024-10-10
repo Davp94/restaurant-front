@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MenuDto } from '../../core/dto/menu.dto';
 import { MatCardModule } from '@angular/material/card';
+import { MenuListComponent } from './menu-list/menu-list.component';
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, MatCheckboxModule, FormsModule, ReactiveFormsModule, MatCardModule],
+  imports: [CommonModule, MatCheckboxModule, FormsModule, ReactiveFormsModule, MatCardModule, MenuListComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
