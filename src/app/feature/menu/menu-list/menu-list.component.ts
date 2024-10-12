@@ -11,7 +11,6 @@ import { PlatoDetailComponent } from '../plato-detail/plato-detail.component';
   imports: [CommonModule, MatCardModule, MatDialogModule],
   templateUrl: './menu-list.component.html',
   styleUrl: './menu-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuListComponent implements OnInit{
 
@@ -22,7 +21,10 @@ export class MenuListComponent implements OnInit{
 
   ngOnInit(): void {
     this.menuService.findAllPlatos().subscribe({
-      next: res => this.platoList = res,
+      next: (res:any) => {
+        this.platoList = res.data;
+        console.log(this.platoList);
+      },
       error: err => console.log(err)
     })
   }

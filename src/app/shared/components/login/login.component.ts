@@ -27,18 +27,17 @@ export class LoginComponent {
       username: this.username,
       password: this.password
     }
-    this.router.navigate(['']);
-    // this.authService.login(loginDto).subscribe({
-    //   next: (res: any) => {
-    //     console.log("🚀 ~ LoginComponent ~ this.authService.login ~ res:", res)
-    //     this.router.navigate(['']);
-    //   },
+    this.authService.login(loginDto).subscribe({
+      next: (res: any) => {
+        console.log("🚀 ~ LoginComponent ~ this.authService.login ~ res:", res)
+        this.router.navigate(['']);
+      },
 
-    //   // catch: (err: any) => {
-    //   //   console.log("🚀 ~ LoginComponent ~ this.authService.login ~ err:", err)
-    //   // },
-    // }
-    //);
+      error: (err: any) => {
+        console.log("🚀 ~ LoginComponent ~ this.authService.login ~ err:", err)
+      },
+    }
+    );
   }
 
   nuevoRegistro(){

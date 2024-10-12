@@ -30,9 +30,10 @@ export class MenuComponent implements OnInit, OnDestroy, OnChanges{
   }
 
   loadMenu() {
-    this.menuService.findAllMenu().subscribe({
-      next: (res: MenuDto[]) => {
-        this.menuList = res;
+    this.menuService.findAllMenu([1,2,3]).subscribe({
+      next: (res: any) => {
+        console.log("🚀 ~ MenuComponent ~ this.menuService.findAllMenu ~ res:", res)
+        this.menuList = res.data;
         this.buildCheckBoxForm();
       },
       error: err => console.log(err)
